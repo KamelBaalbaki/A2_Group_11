@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
   },
   text: { 
     color: "#111827", 
-    fontSize: 16 
+    fontSize: 15 
   },
   modalOverlay: {
     flex: 1,
