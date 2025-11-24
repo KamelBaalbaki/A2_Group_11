@@ -1,35 +1,19 @@
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import MainScreen from './screens/MainScreen';
+import AboutScreen from './screens/AboutScreen';
 
-// You can import supported modules from npm
-import { Card } from 'react-native-paper';
-
-// or any files within the Snack
-import AssetExample from './components/AssetExample';
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.paragraph}>
-        Change code in the editor and watch it change on your phone! Save to get a shareable url.
-      </Text>
-      <Card>
-        <AssetExample />
-      </Card>
-    </View>
+  <NavigationContainer>
+  <Stack.Navigator screenOptions={{ headerShown: false }}>
+  <Stack.Screen name="Main" component={MainScreen} />
+  <Stack.Screen name="About" component={AboutScreen} />
+  </Stack.Navigator>
+  </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    backgroundColor: '#ecf0f1',
-    padding: 8,
-  },
-  paragraph: {
-    margin: 24,
-    fontSize: 18,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-});
