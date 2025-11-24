@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    backgroundColor: "#fff", // make it white so text is visible
+    backgroundColor: "#fff", 
     borderRadius: 12,
     paddingHorizontal: 16,
     paddingVertical: 12,
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     borderColor: "#ccc",
   },
   text: { 
-    color: "#111827", // dark text for visibility
+    color: "#111827", 
     fontSize: 16 
   },
   modalOverlay: {
