@@ -32,7 +32,7 @@ export default function AboutScreen({ navigation }) {
       </Card>
 
 
-      <Text style={styles.footer}>Built for college assignment</Text>
+      <Text style={styles.footer}>Built for COMP 3074 Assignment 2</Text>
       </View>
     </View>
   );
