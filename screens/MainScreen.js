@@ -18,6 +18,7 @@ export default function MainScreen({ navigation }) {
   const [result, setResult] = useState(null);
   const [rateUsed, setRateUsed] = useState(null);
 
+  // Validate input fields
   const validate = () => {
     const num = Number(amount);
     if (isNaN(num) || num <= 0) {
@@ -27,6 +28,8 @@ export default function MainScreen({ navigation }) {
     return true;
   };
 
+
+  // Handle currency conversion
   const handleConvert = async () => {
   if (!validate()) return;
 
@@ -71,7 +74,7 @@ export default function MainScreen({ navigation }) {
       <GradientHeader title="Currency Converter" />
 
       <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
-
+        {/* Currency selectors */}
         <View style={styles.row}>
           <Card style={styles.card}>
             <Text style={styles.label}>From</Text>
@@ -96,7 +99,7 @@ export default function MainScreen({ navigation }) {
           </Card>
         </View>
 
-
+        {/* Amount input */}
         <CustomInput
           label="Amount"
           value={amount}
@@ -106,12 +109,12 @@ export default function MainScreen({ navigation }) {
           autoCapitalize="none"
         />
 
-
+        {/* Convert button */}
         <GradientButton onPress={handleConvert} disabled={loading}>
           {loading ? <ActivityIndicator color="#fff" /> : 'Convert Currency'}
         </GradientButton>
 
-
+        {/* Conversion result */}
         {result && (
           <Card style={styles.resultCard}>
             <View style={styles.resultRow}>
@@ -123,7 +126,7 @@ export default function MainScreen({ navigation }) {
           </Card>
         )}
 
-
+        {/* About link */}
         <TouchableOpacity style={styles.aboutLink} onPress={() => navigation.navigate('About')}>
           <Text style={styles.aboutText}>About this app →</Text>
         </TouchableOpacity>
